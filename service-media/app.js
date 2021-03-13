@@ -8,8 +8,8 @@ const mediaRouter = require('./routes/media');
 const app = express();
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ limit:"58mb"}));
+app.use(express.urlencoded({ extended: false , limit : "58mb"}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
